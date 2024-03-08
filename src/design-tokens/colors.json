@@ -3,20 +3,20 @@
   "description": "Hex color codes that can be shared, cross-platform. They can be converted at point of usage, such as HSL for web or CMYK for print.",
   "items": [
     {
-      "name": "Transparent",
-      "value": "transparent"
+      "name": "Neutral-100",
+      "value": "hsl(0 0% 100%)"
     },
     {
-      "name": "Dark",
-      "value": "#030303"
+      "name": "Neutral-500",
+      "value": "hsl(0 0% 50%)"
     },
     {
-      "name": "Light",
-      "value": "#ffffff"
+      "name": "Neutral-900",
+      "value": "hsl(0 0% 0%)"
     },
     {
       "name": "Primary",
-      "value": "#02394A"
+      "value": "hsl(47 88% 63%)"
     }
   ]
 }

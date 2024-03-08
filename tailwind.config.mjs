@@ -21,7 +21,7 @@ const fontFamily = tokensToTailwind(fontTokens.items);
 const fontWeight = tokensToTailwind(textWeightTokens.items);
 const fontSize = tokensToTailwind(clampGenerator(textSizeTokens.items));
 const lineHeight = tokensToTailwind(textLeadingTokens.items);
-const spacing = tokensToTailwind(clampGenerator(spacingTokens.items));
+const spacing = tokensToTailwind(spacingTokens.items);
 
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
@@ -35,8 +35,22 @@ export default {
       xl: `${viewportTokens.xl}px`,
     },
     colors,
-    spacing,
-    fontSize,
+    spacing: {
+      0: "0",
+      4: "0.25rem",
+      8: "0.5rem",
+      10: "0.625rem",
+      12: "0.75rem",
+      20: "1.25rem",
+      24: "1.5rem",
+      32: "2rem",
+      200: "12.5rem",
+      full: "100%",
+    },
+    fontSize: {
+      ...fontSize,
+      "base-fixed": "0.875rem",
+    },
     lineHeight,
     fontFamily,
     fontWeight,
@@ -47,6 +61,10 @@ export default {
       ...theme("spacing"),
     }),
     padding: ({ theme }) => theme("spacing"),
+    borderRadius: ({ theme }) => ({
+      full: "50%",
+      ...theme("spacing")
+    }),
   },
   variantOrder: [
     "first",
@@ -92,7 +110,7 @@ export default {
 
       const groups = [
         { key: "colors", prefix: "color" },
-        { key: "spacing", prefix: "space" },
+        // { key: "spacing", prefix: "space" },
         { key: "fontSize", prefix: "size" },
         { key: "lineHeight", prefix: "leading" },
         { key: "fontFamily", prefix: "font" },
@@ -113,32 +131,6 @@ export default {
 
       addComponents({
         ":root": postcssJs.objectify(postcss.parse(result)),
-      });
-    }),
-
-    // Generates custom utility classes
-    plugin(function ({ addUtilities, config }) {
-      const currentConfig = config();
-      const customUtilities = [
-        { key: "spacing", prefix: "flow-space", property: "--flow-space" },
-        { key: "spacing", prefix: "region-space", property: "--region-space" },
-        { key: "spacing", prefix: "gutter", property: "--gutter" },
-      ];
-
-      customUtilities.forEach(({ key, prefix, property }) => {
-        const group = currentConfig.theme[key];
-
-        if (!group) {
-          return;
-        }
-
-        Object.keys(group).forEach((key) => {
-          addUtilities({
-            [`.${prefix}-${key}`]: postcssJs.objectify(
-              postcss.parse(`${property}: ${group[key]}`),
-            ),
-          });
-        });
       });
     }),
   ],

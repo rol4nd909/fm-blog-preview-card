@@ -4,10 +4,18 @@
   Low-specificity, global styles that apply to the whole 
   project: https://cube.fyi/css.html
 */
+
 body {
+  display: grid;
+  place-items: center;
+  min-block-size: 100vh;
+  margin: 0;
+  padding-inline: 1.5rem;
+
   font-family: var(--font-base);
+  font-size: var(--size-base);
   line-height: var(--leading-standard);
-  background: var(--color-light);
-  color: var(--color-dark);
-  font-size: var(--size-step-0);
+  color: var(--color-neutral-500);
+
+  background-color: var(--color-primary);
 }

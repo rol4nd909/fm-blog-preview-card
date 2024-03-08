@@ -1,1 +1,20 @@
-/* @font-face here */
+@font-face {
+  font-family: 'Figtree';
+  src:
+    local('Figtree Medium') url('/fm-blog-preview-card/fonts/Figtree-Medium.woff2') format('woff2'),
+    url('/fm-blog-preview-card/fonts/Figtree-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Figtree';
+  src:
+    local('Figtree ExtraBold') url('/fm-blog-preview-card/fonts/Figtree-ExtraBold.woff2')
+      format('woff2'),
+    url('/fm-blog-preview-card/fonts/Figtree-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}

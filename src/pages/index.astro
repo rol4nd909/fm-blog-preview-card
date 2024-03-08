@@ -1,26 +1,25 @@
 ---
 import Layout from '@layouts/Layout.astro'
 
-import Card from '@/components/Card.astro'
+import Card from '@components/Card.astro'
+
+import image from '@assets/illustration-article.svg'
+import avatar from '@assets/image-avatar.webp'
 ---
 
-<Layout title="Welcome to Astro.">
-    <article class="wrapper flow">
-        <h1>CUBE CSS core setup</h1>
-        <div class="switcher">
-            <h2 class="text-primary">A heading and paragraph in two columns</h2>
-            <p>
-                Donec sed odio dui. Donec sed odio dui. Vivamus sagittis lacus vel augue laoreet
-                rutrum faucibus dolor auctor. Vivamus sagittis lacus vel augue laoreet rutrum
-                faucibus dolor auctor. Praesent commodo cursus magna, vel scelerisque nisl
-                consectetur et.
-            </p>
-
-            <Card
-                title="Card title"
-                body="This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
-                href="https://astro.build"
-            />
-        </div>
-    </article>
+<Layout title="Frontend Mentor - Blog preview card">
+    <main class="text-neutral-900">
+        <Card
+            href="https://astro.build"
+            {image}
+            tags={['Learning']}
+            date="21 Dec 2023"
+            title="HTML & CSS foundations"
+            body="These languages are the backbone of every website, defining structure, content, and presentation."
+            user={{
+                name: 'Greg Hooper',
+                avatar: avatar,
+            }}
+        />
+    </main>
 </Layout>
