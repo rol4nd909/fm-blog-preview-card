@@ -26,11 +26,11 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./screenshot.png)
 
 ### Links
 
-- Solution URL: [Solution](https://www.frontendmentor.io/solutions/)
+- Solution URL: [Solution](https://www.frontendmentor.io/solutions/nice-card-design-Vj9DqCHgur)
 - Live Site URL: [live site](https://rol4nd909.github.io/fm-blog-preview-card/)
 
 ## My process
@@ -44,7 +44,8 @@ Users should be able to:
 
 ### What I learned
 
-Using css @property to make a smooth transition with a custom property
+Using css @property to make a smooth transition with a custom property,
+as of now not working in firefox, so there the shadow is not animating on hover.
 
 ```css
 @property --s {
