@@ -45,13 +45,13 @@ const { href, image, tags, date, title, body, user } = Astro.props
             }
         </div>
 
-        <div class="text-small">Published <time>{date}</time></div>
+        <div class="text-small">Published <time datetime="2023-12-23">{date}</time></div>
 
-        <h2
+        <h1
             class="text-heading group-hover:text-primary group-focus-visible:text-primary transition-colors duration-500 leading-standard"
         >
             {title}
-        </h2>
+        </h1>
         <p class="text-neutral-500">{body}</p>
     </div>
 
