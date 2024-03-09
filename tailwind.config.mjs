@@ -9,7 +9,7 @@ const tokensToTailwind = require("./src/css-utils/tokens-to-tailwind.js");
 // Raw design tokens
 const colorTokens = require("./src/design-tokens/colors.json");
 const fontTokens = require("./src/design-tokens/fonts.json");
-const spacingTokens = require("./src/design-tokens/spacing.json");
+// const spacingTokens = require("./src/design-tokens/spacing.json");
 const textSizeTokens = require("./src/design-tokens/text-sizes.json");
 const textLeadingTokens = require("./src/design-tokens/text-leading.json");
 const textWeightTokens = require("./src/design-tokens/text-weights.json");
@@ -21,7 +21,7 @@ const fontFamily = tokensToTailwind(fontTokens.items);
 const fontWeight = tokensToTailwind(textWeightTokens.items);
 const fontSize = tokensToTailwind(clampGenerator(textSizeTokens.items));
 const lineHeight = tokensToTailwind(textLeadingTokens.items);
-const spacing = tokensToTailwind(spacingTokens.items);
+// const spacing = tokensToTailwind(spacingTokens.items);
 
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],

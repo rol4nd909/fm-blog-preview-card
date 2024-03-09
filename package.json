@@ -25,7 +25,8 @@
     "postcss-custom-media": "^10.0.3",
     "postcss-preset-env": "^9.5.0",
     "prettier": "^3.2.5",
-    "prettier-plugin-astro": "^0.13.0"
+    "prettier-plugin-astro": "^0.13.0",
+    "prettier-plugin-tailwindcss": "^0.5.12"
   },
   "engines": {
     "node": ">=20.11.0"

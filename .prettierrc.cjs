@@ -1,5 +1,8 @@
 module.exports = {
-  plugins: [require.resolve('prettier-plugin-astro')],
+  plugins: [
+    require.resolve('prettier-plugin-astro'),
+    require.resolve('prettier-plugin-tailwindcss'),
+  ],
   overrides: [
     {
       files: '*.astro',
@@ -24,4 +27,5 @@ module.exports = {
   useTabs: false,
   jsxBracketSameLine: false,
   trailingComma: "es5",
+  tailwindConfig: './tailwind.config.mjs',
 }
