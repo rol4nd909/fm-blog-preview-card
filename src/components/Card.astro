@@ -20,10 +20,10 @@ const { href, image, tags, date, title, body, user } = Astro.props
 
 <a
     {href}
-    class="card rounded-md group grid gap-24 border border-solid border-neutral-900 bg-neutral-100 p-24"
+    class="card group grid gap-24 rounded-md border border-solid border-neutral-900 bg-neutral-100 p-24"
     target="blank"
 >
-    <figure class="rounded-sm m-0 h-200 overflow-hidden">
+    <figure class="m-0 h-200 overflow-hidden rounded-sm">
         <Image
             src={image}
             alt={title}
@@ -59,7 +59,7 @@ const { href, image, tags, date, title, body, user } = Astro.props
             alt={user.name}
             width={32}
             height={32}
-            class="rounded-round size-32"
+            class="size-32 rounded-round"
             loading="eager"
         />
         <span>{user.name}</span>
