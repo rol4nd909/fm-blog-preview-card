@@ -20,10 +20,10 @@ const { href, image, tags, date, title, body, user } = Astro.props
 
 <a
     {href}
-    class="card group grid gap-24 rounded-20 border border-solid border-neutral-900 bg-neutral-100 p-24"
+    class="card rounded-md group grid gap-24 border border-solid border-neutral-900 bg-neutral-100 p-24"
     target="blank"
 >
-    <figure class="m-0 h-200 overflow-hidden rounded-10">
+    <figure class="rounded-sm m-0 h-200 overflow-hidden">
         <Image
             src={image}
             alt={title}
@@ -34,11 +34,11 @@ const { href, image, tags, date, title, body, user } = Astro.props
         />
     </figure>
 
-    <div class="grid gap-12">
+    <div class="space-y-12">
         <div class="flex flex-wrap gap-8 text-small">
             {
                 tags.map((tag) => (
-                    <span class="rounded-4 bg-primary px-12 py-4 font-extrabold">{tag}</span>
+                    <span class="rounded bg-primary px-12 py-4 font-extrabold">{tag}</span>
                 ))
             }
         </div>
@@ -59,7 +59,7 @@ const { href, image, tags, date, title, body, user } = Astro.props
             alt={user.name}
             width={32}
             height={32}
-            class="size-32 rounded-full"
+            class="rounded-round size-32"
             loading="eager"
         />
         <span>{user.name}</span>

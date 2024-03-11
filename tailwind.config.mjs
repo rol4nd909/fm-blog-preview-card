@@ -23,6 +23,9 @@ const fontSize = tokensToTailwind(clampGenerator(textSizeTokens.items));
 const lineHeight = tokensToTailwind(textLeadingTokens.items);
 // const spacing = tokensToTailwind(spacingTokens.items);
 
+
+// Deafault tailwind config
+// https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/config.full.js
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   // Add color classes to safe list so they are always generated
@@ -39,13 +42,10 @@ export default {
       0: "0",
       4: "0.25rem",
       8: "0.5rem",
-      10: "0.625rem",
       12: "0.75rem",
-      20: "1.25rem",
       24: "1.5rem",
       32: "2rem",
       200: "12.5rem",
-      full: "100%",
     },
     fontSize: {
       ...fontSize,
@@ -61,10 +61,15 @@ export default {
       ...theme("spacing"),
     }),
     padding: ({ theme }) => theme("spacing"),
-    borderRadius: ({ theme }) => ({
-      full: "50%",
-      ...theme("spacing")
-    }),
+    borderRadius: {
+      none: '0',
+      DEFAULT: '0.25rem',
+      sm: "0.625rem",
+      md: "1.25rem",
+      full: '9999px',
+      round: "50%",
+      pill: "100vh",
+    },
   },
   variantOrder: [
     "first",
